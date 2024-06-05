@@ -17,10 +17,10 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '20'
-      - name: Config ConceptualExample
+      - name: Config shape
         run: cmake ${{github.workspace}} -B ${{github.workspace}}/build -D PRINT_VERSION=1.0.0
 
-      - name: Build ConceptualExample
+      - name: Build shape_build
         run: cmake --build ${{github.workspace}}/build
 
       - name: Build package
