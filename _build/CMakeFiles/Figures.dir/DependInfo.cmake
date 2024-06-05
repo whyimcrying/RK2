@@ -8,7 +8,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/mihailerosenko/Desktop/RK2/G34_Non_Owning_Type_Erasure_1.cpp" "CMakeFiles/Figures.dir/G34_Non_Owning_Type_Erasure_1.cpp.o" "gcc" "CMakeFiles/Figures.dir/G34_Non_Owning_Type_Erasure_1.cpp.o.d"
   "/Users/mihailerosenko/Desktop/RK2/Main-2.cpp" "CMakeFiles/Figures.dir/Main-2.cpp.o" "gcc" "CMakeFiles/Figures.dir/Main-2.cpp.o.d"
   )
 

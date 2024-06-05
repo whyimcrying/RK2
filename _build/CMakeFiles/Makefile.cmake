@@ -47,6 +47,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/Figures1.dir/DependInfo.cmake"
-  "CMakeFiles/Figures2.dir/DependInfo.cmake"
+  "CMakeFiles/Figures.dir/DependInfo.cmake"
   )

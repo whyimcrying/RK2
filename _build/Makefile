@@ -117,61 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Figures1
+# Target rules for targets named Figures
 
 # Build rule for target.
-Figures1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Figures1
-.PHONY : Figures1
+Figures: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Figures
+.PHONY : Figures
 
 # fast build rule for target.
-Figures1/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Figures1.dir/build.make CMakeFiles/Figures1.dir/build
-.PHONY : Figures1/fast
-
-#=============================================================================
-# Target rules for targets named Figures2
-
-# Build rule for target.
-Figures2: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Figures2
-.PHONY : Figures2
-
-# fast build rule for target.
-Figures2/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Figures2.dir/build.make CMakeFiles/Figures2.dir/build
-.PHONY : Figures2/fast
-
-G34_Non_Owning_Type_Erasure_1.o: G34_Non_Owning_Type_Erasure_1.cpp.o
-.PHONY : G34_Non_Owning_Type_Erasure_1.o
-
-# target to build an object file
-G34_Non_Owning_Type_Erasure_1.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Figures1.dir/build.make CMakeFiles/Figures1.dir/G34_Non_Owning_Type_Erasure_1.cpp.o
-.PHONY : G34_Non_Owning_Type_Erasure_1.cpp.o
-
-G34_Non_Owning_Type_Erasure_1.i: G34_Non_Owning_Type_Erasure_1.cpp.i
-.PHONY : G34_Non_Owning_Type_Erasure_1.i
-
-# target to preprocess a source file
-G34_Non_Owning_Type_Erasure_1.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Figures1.dir/build.make CMakeFiles/Figures1.dir/G34_Non_Owning_Type_Erasure_1.cpp.i
-.PHONY : G34_Non_Owning_Type_Erasure_1.cpp.i
-
-G34_Non_Owning_Type_Erasure_1.s: G34_Non_Owning_Type_Erasure_1.cpp.s
-.PHONY : G34_Non_Owning_Type_Erasure_1.s
-
-# target to generate assembly for a file
-G34_Non_Owning_Type_Erasure_1.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Figures1.dir/build.make CMakeFiles/Figures1.dir/G34_Non_Owning_Type_Erasure_1.cpp.s
-.PHONY : G34_Non_Owning_Type_Erasure_1.cpp.s
+Figures/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Figures.dir/build.make CMakeFiles/Figures.dir/build
+.PHONY : Figures/fast
 
 Main-2.o: Main-2.cpp.o
 .PHONY : Main-2.o
 
 # target to build an object file
 Main-2.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Figures2.dir/build.make CMakeFiles/Figures2.dir/Main-2.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Figures.dir/build.make CMakeFiles/Figures.dir/Main-2.cpp.o
 .PHONY : Main-2.cpp.o
 
 Main-2.i: Main-2.cpp.i
@@ -179,7 +142,7 @@ Main-2.i: Main-2.cpp.i
 
 # target to preprocess a source file
 Main-2.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Figures2.dir/build.make CMakeFiles/Figures2.dir/Main-2.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Figures.dir/build.make CMakeFiles/Figures.dir/Main-2.cpp.i
 .PHONY : Main-2.cpp.i
 
 Main-2.s: Main-2.cpp.s
@@ -187,7 +150,7 @@ Main-2.s: Main-2.cpp.s
 
 # target to generate assembly for a file
 Main-2.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Figures2.dir/build.make CMakeFiles/Figures2.dir/Main-2.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Figures.dir/build.make CMakeFiles/Figures.dir/Main-2.cpp.s
 .PHONY : Main-2.cpp.s
 
 # Help Target
@@ -198,11 +161,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Figures1"
-	@echo "... Figures2"
-	@echo "... G34_Non_Owning_Type_Erasure_1.o"
-	@echo "... G34_Non_Owning_Type_Erasure_1.i"
-	@echo "... G34_Non_Owning_Type_Erasure_1.s"
+	@echo "... Figures"
 	@echo "... Main-2.o"
 	@echo "... Main-2.i"
 	@echo "... Main-2.s"

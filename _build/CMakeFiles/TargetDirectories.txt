@@ -1,4 +1,3 @@
-/Users/mihailerosenko/Desktop/RK2/_build/CMakeFiles/Figures1.dir
-/Users/mihailerosenko/Desktop/RK2/_build/CMakeFiles/Figures2.dir
+/Users/mihailerosenko/Desktop/RK2/_build/CMakeFiles/Figures.dir
 /Users/mihailerosenko/Desktop/RK2/_build/CMakeFiles/edit_cache.dir
 /Users/mihailerosenko/Desktop/RK2/_build/CMakeFiles/rebuild_cache.dir
