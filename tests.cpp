@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
-#include "shape.h"
-#include "circle.h"
-#include "square.h"
+#include "Shape.h"
+#include "Circle.h"
+#include "Square.h"
 #include <iostream>
 
 struct CircleDrawer {
