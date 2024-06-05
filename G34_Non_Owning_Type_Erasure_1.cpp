@@ -10,14 +10,16 @@
 *
 **************************************************************************************************/
 
+#include <cstdlib>
+#include <memory>
 
 //---- <Circle.h> ---------------------------------------------------------------------------------
 
 class Circle
 {
  public:
-   explicit Circle( double radius )
-      : radius_( radius )
+   explicit Circle(double radius)
+      : radius_(radius)
    {}
 
    double radius() const { return radius_; }
@@ -34,8 +36,8 @@ class Circle
 class Square
 {
  public:
-   explicit Square( double side )
-      : side_( side )
+   explicit Square(double side)
+      : side_(side)
    {}
 
    double side() const { return side_; }
@@ -49,45 +51,36 @@ class Square
 
 //---- <Shape.h> ----------------------------------------------------------------------------------
 
-#include <memory>
-
 class ShapeConstRef
 {
  public:
    template< typename ShapeT, typename DrawStrategy >
-   ShapeConstRef( ShapeT& shape, DrawStrategy& drawer )
+   ShapeConstRef(ShapeT& shape, DrawStrategy& drawer)
       : shape_{ std::addressof(shape) }
       , drawer_{ std::addressof(drawer) }
-      , draw_{ []( void const* shapeBytes, void const* drawerBytes ){
+      , draw_{ [](void const* shapeBytes, void const* drawerBytes) {
            auto const* shape = static_cast<ShapeT const*>(shapeBytes);
            auto const* drawer = static_cast<DrawStrategy const*>(drawerBytes);
-           (*drawer)( *shape );
+           (*drawer)(*shape);
         } }
    {}
 
  private:
-   friend void draw( ShapeConstRef const& shape )
+   friend void draw(ShapeConstRef const& shape)
    {
-      shape.draw_( shape.shape_, shape.drawer_ );
+      shape.draw_(shape.shape_, shape.drawer_);
    }
 
-   using DrawOperation = void( void const*,void const* );
+   using DrawOperation = void(void const*, void const*);
 
    void const* shape_{ nullptr };
    void const* drawer_{ nullptr };
    DrawOperation* draw_{ nullptr };
 };
 
-
-//---- <Main.cpp> ---------------------------------------------------------------------------------
-
-//#include <Circle.h>
-//#include <Shape.h>
-#include <cstdlib>
-
-void useShapeConstRef( ShapeConstRef shape )
+void useShapeConstRef(ShapeConstRef shape)
 {
-   draw( shape );
+   draw(shape);
 }
 
 int main()
@@ -96,11 +89,10 @@ int main()
    Circle circle{ 3.14 };
 
    // Create a drawing strategy in form of a lambda
-   auto drawer = []( Circle const& c ){ /*...*/ };
+   auto drawer = [](Circle const& c) { /*...*/ };
 
    // Draw the circle directly via the 'ShapeConstRef' abstraction
-   useShapeConstRef( { circle, drawer } );
+   useShapeConstRef({ circle, drawer });
 
    return EXIT_SUCCESS;
 }
-
