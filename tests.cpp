@@ -3,6 +3,7 @@
 #include "Circle.h"
 #include "Square.h"
 #include <iostream>
+#include <sstream>
 
 struct CircleDrawer {
     void operator()(Circle const& circle) const {
@@ -30,12 +31,24 @@ TEST(ShapeConstRefTest, DrawCircle) {
     Circle circle(5.0);
     CircleDrawer circleDrawer;
     ShapeConstRef shapeRef(circle, circleDrawer);
+
+    std::ostringstream buffer;
+    std::streambuf* old = std::cout.rdbuf(buffer.rdbuf());
     draw(shapeRef);
+    std::cout.rdbuf(old);
+
+    EXPECT_EQ(buffer.str(), "Drawing circle with radius 5\n");
 }
 
 TEST(ShapeConstRefTest, DrawSquare) {
     Square square(4.0);
     SquareDrawer squareDrawer;
     ShapeConstRef shapeRef(square, squareDrawer);
+
+    std::ostringstream buffer;
+    std::streambuf* old = std::cout.rdbuf(buffer.rdbuf());
     draw(shapeRef);
+    std::cout.rdbuf(old);
+
+    EXPECT_EQ(buffer.str(), "Drawing square with side 4\n");
 }
